@@ -1,0 +1,539 @@
+
+=>
+=>
+=> loadb 0x8000
+## Ready for binary (kermit) download to 0x00008000 at 115200 bps...
+## Total Size      = 0x0000c56c = 50540 Bytes
+## Start Addr      = 0x00008000
+=> go 0x8000
+## Starting application at 0x00008000 ...
+
+ Press 'ENTER' to start ...
+ Press 'ENTER' to start ... Use UART3
+
+***************************************************
+ Build Date: Aug 13 2017,16:31:50 with GCC 5.3.1
+***************************************************
+ Code was not compiled to address 0x00000000 or 0xFFFD0000; interrupts will not work unless code vector table are copied !
+***************************************************
+ Display Some Chip Info
+***************************************************
+> Found NPCM750x BMC chip version A1.
+> PLLs and Clocks:
+  * PLLCON0 = 0x80202101.  (800 MHz; locked)
+  * PLLCON1 = 0x80402101.  (800 MHz; locked)
+  * PLLCON2 = 0x80C02105.  (960 MHz; locked)
+  * CLKSEL = 0x01F18F09
+    - CPU Clock Source (CPUCKSEL) => PLL 1.
+    - Memory Controller Clock Source (MCCKSEL) => PLL 1.
+  * CLKDIV1 = 0x04137A55
+    - CLK2(AXI16) = CPU clock /2.
+    - CLK4 = CLK2/2)
+  * CLKDIV2 = 0xEB4F8F97
+  * CLKDIV3 = 0x000000FE
+
+
+Select:
+1. Dump GFX info registers.
+2. Release PCI reset (forced off for Hostless mode or when Host is powered-down).
+3. Init GFX (using AHB2PCI bridge) to 1920x1200@16bit
+4. Init GFX (using AHB2PCI bridge) to 1024x768@16bit
+6. Init GFX (using AHB2PCI bridge) to 1024x768@32bit
+7. Set GFX memory to 0
+8. Set CRTC offset to test value
+9. Set CRTC offset to 0x00000
+A. Enable output GFX PLL clock (div by 4) to CLKOUT pin.
+E. Exit.
+> a
+> Enabled GFX PLL output clock (div by 4) to CLKOUT pin (CLKOUTSEL=3; CLKOUTDIV=3);
+
+
+Select:
+1. Dump GFX info registers.
+2. Release PCI reset (forced off for Hostless mode or when Host is powered-down).
+3. Init GFX (using AHB2PCI bridge) to 1920x1200@16bit
+4. Init GFX (using AHB2PCI bridge) to 1024x768@16bit
+6. Init GFX (using AHB2PCI bridge) to 1024x768@32bit
+7. Set GFX memory to 0
+8. Set CRTC offset to test value
+9. Set CRTC offset to 0x00000
+A. Enable output GFX PLL clock (div by 4) to CLKOUT pin.
+E. Exit.
+> 2
+> PWRGD_PS signal is high.
+> Released internal nPCIRST.
+
+
+Select:
+1. Dump GFX info registers.
+2. Release PCI reset (forced off for Hostless mode or when Host is powered-down).
+3. Init GFX (using AHB2PCI bridge) to 1920x1200@16bit
+4. Init GFX (using AHB2PCI bridge) to 1024x768@16bit
+6. Init GFX (using AHB2PCI bridge) to 1024x768@32bit
+7. Set GFX memory to 0
+8. Set CRTC offset to test value
+9. Set CRTC offset to 0x00000
+A. Enable output GFX PLL clock (div by 4) to CLKOUT pin.
+E. Exit.
+> 3
+FB_Initialize : Frame-Buffer address = 1F000000h
+***************************************************
+GFX Display Configuration to 1920x1200
+***************************************************
+Waiting until PCI is out of reset ...
+AHB2PCI_Config_Read: read from address=0x10000, size=4, data=0x536102B (DW data=0x536102B)
+AHB2PCI_Config_Write: wrote to address=0x10014, size=4, data=0x10000000, ibyte=0
+AHB2PCI_Config_Read: read from address=0x10014, size=4, data=0x10000000 (DW data=0x10000000)
+TEST_ConfigureDisplay : MGABASE1 = 10000000h
+AHB2PCI_Config_Write: wrote to address=0x10010, size=4, data=0xF0000000, ibyte=0
+AHB2PCI_Config_Read: read from address=0x10014, size=4, data=0x10000000 (DW data=0x10000000)
+AHB2PCI_Config_Read: read from address=0x10010, size=4, data=0xF0000008 (DW data=0xF0000008)
+MGABASE1 = 10000000h, MGABASE2 = F0000008h
+AHB2PCI_Config_Read: read from address=0x10004, size=4, data=0x2B00000 (DW data=0x2B00000)
+AHB2PCI_Config_Write: wrote to address=0x10004, size=4, data=0x2B00006, ibyte=0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x1A
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x8D
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0xB6
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xDE
+AHB2PCI_Memory_Read: Addr=0x10003C08, Size=4, Data=0xDE0000
+FBDV: 00DE0000h
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0xB7
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x9
+AHB2PCI_Memory_Read: Addr=0x10003C08, Size=4, Data=0x90000
+INDV + FBDV8: 00090000h
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0xB8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xC
+AHB2PCI_Memory_Read: Addr=0x10003C08, Size=4, Data=0xC0000
+OTDV1/OTDV2: 000C0000h
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x1A
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x9
+AHB2PCI_Memory_Read: Addr=0x10003C08, Size=4, Data=0x90000
+XPIXCLKCTRL: 00090000h
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x18
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xF
+AHB2PCI_Memory_Read: Addr=0x10003C08, Size=4, Data=0xF0000
+XVREFCTRL: 000F0000h
+Pixel Clock Configuration Done
+if (!AHB2PCI_Memory_Write: Addr=0x10001FC4, Size=2, Data=0x100
+if (!AHB2PCI_Memory_Write: Addr=0x10001FC4, Size=2, Data=0x101
+if (!AHB2PCI_Memory_Write: Addr=0x10001FC4, Size=2, Data=0x302
+if (!AHB2PCI_Memory_Write: Addr=0x10001FC4, Size=2, Data=0x3
+if (!AHB2PCI_Memory_Write: Addr=0x10001FC4, Size=2, Data=0x204
+if (!AHB2PCI_Memory_Write: Addr=0x10001FC2, Size=1, Data=0xC9
+if (!AHB2PCI_Memory_Write: Addr=0x10001FC4, Size=2, Data=0x300
+Sequencers Configuration Done
+if (!AHB2PCI_Memory_Write: Addr=0x10001FCE, Size=2, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10001FCE, Size=2, Data=0x1
+if (!AHB2PCI_Memory_Write: Addr=0x10001FCE, Size=2, Data=0x2
+if (!AHB2PCI_Memory_Write: Addr=0x10001FCE, Size=2, Data=0x3
+if (!AHB2PCI_Memory_Write: Addr=0x10001FCE, Size=2, Data=0x4
+if (!AHB2PCI_Memory_Write: Addr=0x10001FCE, Size=2, Data=0x1005
+if (!AHB2PCI_Memory_Write: Addr=0x10001FCE, Size=2, Data=0xE06
+if (!AHB2PCI_Memory_Write: Addr=0x10001FCE, Size=2, Data=0x7
+if (!AHB2PCI_Memory_Write: Addr=0x10001FCE, Size=2, Data=0xFF08
+Graphics Controller Configuration Done
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xFF00
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xEF01
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xEF02
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x8303
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xF504
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x1905
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xD106
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x1007
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x8
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x4009
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x200A
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xB
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xC
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x800D
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xFF00
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xE
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xF
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xB210
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x2811
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xAF12
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xF013
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x14
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xAF15
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xD216
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xC317
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0xFF18
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x22
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x8024
+if (!AHB2PCI_Memory_Write: Addr=0x10001FD4, Size=2, Data=0x3426
+CRTC Configuration Done
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0x801
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0xAD02
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0x8103
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0x4
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0x5
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0x2006
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0x7
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0x1030
+if (!AHB2PCI_Memory_Write: Addr=0x10001FDE, Size=2, Data=0x534
+CRTC Extension configuration done
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x4
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x4F
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x5
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x3A
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x6
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x82
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x9
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xFB
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0xA
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x44
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0xC
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x2C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0xD
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x75
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0xE
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x8B
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x10
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x14
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x11
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x2E
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x12
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x4A
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x19
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x2
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x1A
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x9
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x1D
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x20
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x1E
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x1F
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x2A
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x1
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x2B
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x2
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x2C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x14
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x2D
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x71
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x2E
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x1
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x2F
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x40
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x38
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x3A
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x3C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x3D
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xB5
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x3E
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xB
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x40
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xFD
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x41
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x42
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xB6
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x43
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x44
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x11
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x45
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x10
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x46
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x7
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x48
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xC
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x49
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x75
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x4A
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x7
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x4C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x13
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x4D
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x5D
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x4E
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x5
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x4F
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x51
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x1
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x18
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x4
+: Addr=0x10003C00, Size=1, Data=0x52
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x61
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x53
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x7D
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x54
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xD1
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x55
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0xFE
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x56
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x7D
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x57
+if (!AHB2PCI_Memory_Write: Addr=0x10003C0A, Size=1, Data=0x3A
+DAC Eclipse Configuration Done
+if (!AHB2PCI_Memory_Write: Addr=0x10003C00, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x4
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x10
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x10
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x18
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xC
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x18
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x20
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x10
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x20
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x28
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x14
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x28
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x30
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x18
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x30
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x38
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x38
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x40
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x20
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x40
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x48
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x24
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x48
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x50
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x28
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x50
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x58
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x2C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x58
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x60
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x30
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x60
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x68
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x34
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x68
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x70
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x38
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x70
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x78
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x3C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x78
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x80
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x40
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x80
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x88
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x44
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x88
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x90
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x48
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x90
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x98
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x4C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x98
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xA0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x50
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xA0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xA8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x54
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xA8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xB0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x58
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xB0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xB8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x5C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xB8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xC0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x60
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xC0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xC8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x64
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xC8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xD0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x68
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xD0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xD8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x6C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xD8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xE0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x70
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xE0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xE8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x74
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xE8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xF0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x78
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xF0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xF8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x7C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xF8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x100
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x80
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x100
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x108
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x84
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x108
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x110
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x88
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x110
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x118
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x8C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x118
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x120
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x90
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x120
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x128
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x94
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x128
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x130
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x98
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x130
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x138
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x9C
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x138
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x140
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xA0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x140
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x148
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xA4
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x148
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x150
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xA8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x150
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x158
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xAC
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x158
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x160
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xB0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x160
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x168
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xB4
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x168
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x170
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xB8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x170
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x178
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xBC
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x178
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x180
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xC0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x180
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x188
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xC4
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x188
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x190
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xC8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x190
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x198
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xCC
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x198
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1A0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xD0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1A0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1A8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xD4
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1A8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1B0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xD8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1B0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1B8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xDC
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1B8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1C0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xE0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1C0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1C8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xE4
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1C8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1D0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xE8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1D0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1D8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xEC
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1D8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1E0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xF0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1E0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1E8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xF4
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1E8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1F0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xF8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1F0
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1F8
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0xFC
+if (!AHB2PCI_Memory_Write: Addr=0x10003C01, Size=1, Data=0x1F8
+Pallete Configuration Done
+Filling Frame Buffer Done!
+
+
+Select:
+1. Dump GFX info registers.
+2. Release PCI reset (forced off for Hostless mode or when Host is powered-down).
+3. Init GFX (using AHB2PCI bridge) to 1920x1200@16bit
+4. Init GFX (using AHB2PCI bridge) to 1024x768@16bit
+6. Init GFX (using AHB2PCI bridge) to 1024x768@32bit
+7. Set GFX memory to 0
+8. Set CRTC offset to test value
+9. Set CRTC offset to 0x00000
+A. Enable output GFX PLL clock (div by 4) to CLKOUT pin.
+E. Exit.
+> 1
+
+
+Dump Graphics Core (GFX) Information Registers (Read-Only):
+DISPHDST      = 0x84
+FBADL         = 0x80
+FBADM         = 0x00
+FBADH         = 0x00
+HVCNTL        = 0x7F
+HVCNTH        = 0x07
+HBPCNTL       = 0x4B
+HBPCNTH       = 0x00
+VVCNTL        = 0xB0
+VVCNTH        = 0x04
+VBPCNTL       = 0x1A
+VBPCNTH       = 0x00
+CURPOSXL      = 0x19
+CURPOSXH      = 0x0F
+CURPOSYL      = 0x0F
+CURPOSYH      = 0x81
+GPLLINDIV     = 0x09
+GPLLFBDIV     = 0xDE
+GPLLST        = 0x0C
+KVMHDST       = 0xC4
+COLDEP        = 0x02
+VDISPEND      = 0x00
+VBLANKSTR     = 0x00
+VBLANKEND     = 0x00
+VTOTAL        = 0x00
+VHIGH         = 0x00
+HDISPEND      = 0x00
+HBLANKSTR     = 0x00
+HBLANKEND     = 0x00
+HTOTAL        = 0x00
+CURWIDTH      = 0x00
+CURHEIGHT     = 0x00
+CURHSXL       = 0x00
+GPR12         = 0x00
+GPR13         = 0x00
+GPR14         = 0x00
+GPR15         = 0x00
+Calculated PLLG output: 154[MHz] (rounded)
+Resolution: 1920x1200x16bpp
+
+
+Select:
+1. Dump GFX info registers.
+2. Release PCI reset (forced off for Hostless mode or when Host is powered-down).
+3. Init GFX (using AHB2PCI bridge) to 1920x1200@16bit
+4. Init GFX (using AHB2PCI bridge) to 1024x768@16bit
+6. Init GFX (using AHB2PCI bridge) to 1024x768@32bit
+7. Set GFX memory to 0
+8. Set CRTC offset to test value
+9. Set CRTC offset to 0x00000
+A. Enable output GFX PLL clock (div by 4) to CLKOUT pin.
+E. Exit.
+>

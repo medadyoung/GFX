@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Core_0|Win32">
+      <Configuration>Core_0</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Core_1|Win32">
+      <Configuration>Core_1</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>PolegArmCode</ProjectName>
+    <ProjectGuid>{8E485506-299F-443D-9FE2-53B3FC091E8F}</ProjectGuid>
+    <RootNamespace>TestMsg_Core</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Core_1|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Core_0|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Core_1|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Core_0|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25420.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Core_0|Win32'">
+    <ReferencePath>C:\Program Files (x86)\GNU Tools ARM Embedded\4.8 2013q4\bin;$(ReferencePath)</ReferencePath>
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>.\Make.bat TestMsg  $(Configuration)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>.\Make.bat TestMsg  $(Configuration)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine />
+    <NMakeOutput />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Core_1|Win32'">
+    <ReferencePath>C:\Program Files (x86)\GNU Tools ARM Embedded\4.8 2013q4\bin;$(ReferencePath)</ReferencePath>
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>.\Make.bat TestMsg  $(Configuration)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>.\Make.bat TestMsg  $(Configuration)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine />
+    <NMakeOutput />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Core_0|Win32'">
+    <BuildLog>
+      <Path>output_$(Configuration)\BuildLog.htm</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Core_1|Win32'">
+    <BuildLog>
+      <Path>output\BuildLog.htm</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AHB2PCI_funcs.c" />
+    <ClCompile Include="DDR_Init.c" />
+    <ClCompile Include="GraphicsInit.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="printf.c" />
+    <ClCompile Include="syscalls.c" />
+    <ClCompile Include="TestMsgCore.c" />
+    <ClCompile Include="Utility.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AHB2PCI_defs.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="CoreRegisters.h" />
+    <ClInclude Include="GraphicsInit.h" />
+    <ClInclude Include="Poleg.h" />
+    <ClInclude Include="TestMsgCore.h" />
+    <ClInclude Include="Utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linker_Core_0.ld" />
+    <None Include="Linker_Core_1.ld" />
+    <None Include="Make.bat" />
+    <None Include="startup_CA9.s" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
